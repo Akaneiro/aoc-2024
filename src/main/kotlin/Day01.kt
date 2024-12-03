@@ -4,8 +4,9 @@ class Day01 : Day {
 
     override val fileName: String = "Day01"
 
-    override fun solvePart1(input: List<String>): Int {
-        val (left, right) = makeLists(input)
+    override fun solvePart1(input: String): Int {
+        val inputLines = input.asLines()
+        val (left, right) = makeLists(inputLines)
         left.sort()
         right.sort()
         return left.sorted()
@@ -13,8 +14,9 @@ class Day01 : Day {
             .sumOf { (it.first - it.second).absoluteValue }
     }
 
-    override fun solvePart2(input: List<String>): Int {
-        val (left, right) = makeLists(input)
+    override fun solvePart2(input: String): Int {
+        val inputLines = input.asLines()
+        val (left, right) = makeLists(inputLines)
         var sum = 0
         left.forEach { number ->
             sum += number * right.count { it == number }
@@ -27,8 +29,8 @@ class Day01 : Day {
         val left = mutableListOf<Int>()
         val right = mutableListOf<Int>()
         input.forEach {
-            left.add(it.substringBefore(" ").toInt())
-            right.add(it.substringAfter(" ").toInt())
+            left.add(it.substringBefore(" ").trim().toInt())
+            right.add(it.substringAfter(" ").trim().toInt())
         }
         return left to right
     }
