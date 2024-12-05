@@ -3,13 +3,15 @@ import org.junit.jupiter.api.Test
 
 class Day01Test : DayTest {
 
-    override val input: String
-        get() = "3   4\n" +
-                "4   3\n" +
-                "2   5\n" +
-                "1   3\n" +
-                "3   9\n" +
-                "3   3\n"
+    override val input: String = """
+        3   4
+        4   3
+        2   5
+        1   3
+        3   9
+        3   3
+        """.trimIndent()
+
     override val day: Day = Day01()
 
     @Test

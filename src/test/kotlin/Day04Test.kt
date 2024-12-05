@@ -1,19 +1,20 @@
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
 
-class Day04Test: DayTest {
+class Day04Test : DayTest {
 
-    override val input: String
-        get() = "MMMSXXMASM\n" +
-                "MSAMXMSMSA\n" +
-                "AMXSXMAAMM\n" +
-                "MSAMASMSMX\n" +
-                "XMASAMXAMM\n" +
-                "XXAMMXXAMA\n" +
-                "SMSMSASXSS\n" +
-                "SAXAMASAAA\n" +
-                "MAMMMXMMMM\n" +
-                "MXMXAXMASX"
+    override val input: String = """
+    MMMSXXMASM
+    MSAMXMSMSA
+    AMXSXMAAMM
+    MSAMASMSMX
+    XMASAMXAMM
+    XXAMMXXAMA
+    SMSMSASXSS
+    SAXAMASAAA
+    MAMMMXMMMM
+    MXMXAXMASX
+    """.trimIndent()
 
     override val day: Day
         get() = Day04()
