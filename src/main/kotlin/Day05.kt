@@ -92,6 +92,11 @@ class Day05 : Day {
         }
     }
 
+    /**
+     * Если update не содержит ошибок, то возвращаем его
+     * Если содержит ошибку, то меняем местами числа из rule в этом update и снова проверяем update
+     * Алгоритм не самый оптимальный, но он работает
+     */
     private tailrec fun makeUpdateCorrect(update: List<Int>, rulesForUpdate: List<Pair<Int, Int>>): List<Int> {
         val errorRule = checkUpdateForRules(update, rulesForUpdate)
         return if (errorRule == null) {
