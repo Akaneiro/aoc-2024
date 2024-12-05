@@ -7,8 +7,6 @@ class Day01 : Day {
     override fun solvePart1(input: String): Int {
         val inputLines = input.asLines()
         val (left, right) = makeLists(inputLines)
-        left.sort()
-        right.sort()
         return left.sorted()
             .zip(right.sorted())
             .sumOf { (it.first - it.second).absoluteValue }
@@ -17,10 +15,6 @@ class Day01 : Day {
     override fun solvePart2(input: String): Int {
         val inputLines = input.asLines()
         val (left, right) = makeLists(inputLines)
-        var sum = 0
-        left.forEach { number ->
-            sum += number * right.count { it == number }
-        }
         val elementsFrequencies = right.groupingBy { it }.eachCount()
         return left.sumOf { it * elementsFrequencies.getOrDefault(it, 0) }
     }
@@ -29,8 +23,8 @@ class Day01 : Day {
         val left = mutableListOf<Int>()
         val right = mutableListOf<Int>()
         input.forEach {
-            left.add(it.substringBefore(" ").trim().toInt())
-            right.add(it.substringAfter(" ").trim().toInt())
+            left.add(it.substringBefore(" ").toInt())
+            right.add(it.substringAfterLast(" ").toInt())
         }
         return left to right
     }
