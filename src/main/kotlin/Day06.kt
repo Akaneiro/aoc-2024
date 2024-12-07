@@ -1,6 +1,4 @@
-class Day06 : Day {
-    override val fileName: String
-        get() = "Day06"
+class Day06 : Day() {
 
     private val obstacleChar = '#'
     private val freeWayChar = '.'

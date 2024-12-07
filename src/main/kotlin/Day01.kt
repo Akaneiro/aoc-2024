@@ -1,8 +1,6 @@
 import kotlin.math.absoluteValue
 
-class Day01 : Day {
-
-    override val fileName: String = "Day01"
+class Day01 : Day() {
 
     override fun solvePart1(input: String): Long {
         val inputLines = input.asLines()

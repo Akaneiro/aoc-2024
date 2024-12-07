@@ -1,6 +1,4 @@
-class Day03: Day {
-    override val fileName: String
-        get() = "Day03"
+class Day03: Day() {
 
     override fun solvePart1(input: String): Long {
         val pattern = Regex("mul\\((\\d{1,3}),(\\d{1,3})\\)")

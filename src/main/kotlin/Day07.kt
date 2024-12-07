@@ -1,7 +1,4 @@
-class Day07 : Day {
-
-    override val fileName: String
-        get() = "Day07"
+class Day07 : Day() {
 
     override fun solvePart1(input: String): Long {
         val lines = input.asLines()
