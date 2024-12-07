@@ -6,7 +6,7 @@ class Day06 : Day {
     private val freeWayChar = '.'
     private val guardChar = '^'
 
-    override fun solvePart1(input: String): Int {
+    override fun solvePart1(input: String): Long {
         val matrix = parseDataAsMatrix(input)
         val (guardY, column) = findGuardPosition(matrix)
         val initialOrientation = Orientation.UP
@@ -21,10 +21,10 @@ class Day06 : Day {
             visitedPositions = mutableListOf(VisitedPosition(x = column, y = guardY, orientation = initialOrientation)),
         ).visitedPositions.distinctBy { Pair(it.x, it.y) }
 
-        return visitedPositions.size
+        return visitedPositions.size.toLong()
     }
 
-    override fun solvePart2(input: String): Int {
+    override fun solvePart2(input: String): Long {
         val matrix = parseDataAsMatrix(input)
         val (guardY, guardX) = findGuardPosition(matrix)
         val initialOrientation = Orientation.UP
@@ -66,7 +66,7 @@ class Day06 : Day {
             }
             matrix[visitedPosition.y][visitedPosition.x] = freeWayChar
         }
-        return counter
+        return counter.toLong()
     }
 
     private fun findGuardPosition(matrix: Array<CharArray>): Pair<Int, Int> {

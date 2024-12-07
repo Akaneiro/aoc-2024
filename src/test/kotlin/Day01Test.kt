@@ -16,11 +16,11 @@ class Day01Test : DayTest {
 
     @Test
     override fun testPart1() {
-        assertEquals(11, day.solvePart1(input))
+        assertEquals(11L, day.solvePart1(input))
     }
 
     @Test
     override fun testPart2() {
-        assertEquals(31, day.solvePart2(input))
+        assertEquals(31L, day.solvePart2(input))
     }
 }

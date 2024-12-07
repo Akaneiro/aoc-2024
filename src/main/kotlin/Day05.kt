@@ -2,7 +2,7 @@ class Day05 : Day {
     override val fileName: String
         get() = "Day05"
 
-    override fun solvePart1(input: String): Int {
+    override fun solvePart1(input: String): Long {
         val lines = input.asLines()
         val rules = makeRulesFromInput(lines)
         val updates = makeUpdatesFromInput(lines)
@@ -13,10 +13,10 @@ class Day05 : Day {
 
         return correctUpdates.sumOf {
             it[it.size / 2]
-        }
+        }.toLong()
     }
 
-    override fun solvePart2(input: String): Int {
+    override fun solvePart2(input: String): Long {
         val lines = input.asLines()
         val rules = makeRulesFromInput(lines)
         val updates = makeUpdatesFromInput(lines)
@@ -30,7 +30,7 @@ class Day05 : Day {
         }
         return correctUpdates.sumOf {
             it[it.size / 2]
-        }
+        }.toLong()
     }
 
     private fun makeRulesFromInput(lines: List<String>): List<Pair<Int, Int>> {

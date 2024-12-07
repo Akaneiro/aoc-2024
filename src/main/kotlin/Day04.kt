@@ -2,7 +2,7 @@ class Day04 : Day {
     override val fileName: String
         get() = "Day04"
 
-    override fun solvePart1(input: String): Int {
+    override fun solvePart1(input: String): Long {
         val lines = input.asLines()
         return lines.flatMapIndexed { y, row ->
             row.mapIndexed { x, c ->
@@ -12,10 +12,10 @@ class Day04 : Day {
                     }
                 } else 0
             }
-        }.sum()
+        }.sum().toLong()
     }
 
-    override fun solvePart2(input: String): Int {
+    override fun solvePart2(input: String): Long {
         val lines = input.asLines()
         return lines.flatMapIndexed { y, row ->
             row.mapIndexed { x, c ->
@@ -25,7 +25,7 @@ class Day04 : Day {
                         .joinToString("") in setOf("MMSS", "MSSM", "SSMM", "SMMS")
                 } else false
             }
-        }.count { it }
+        }.count { it }.toLong()
     }
 
     private fun List<String>.safeAt(x: Int, y: Int): Char =
